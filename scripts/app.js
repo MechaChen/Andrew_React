@@ -5,7 +5,8 @@
 // logical and operator
 var app = {
   title: "Indecision App",
-  subtitle: "Put your life in the hands of computer"
+  subtitle: "Put your life in the hands of computer",
+  options: ["One", "Two"]
 };
 var template = React.createElement(
   React.Fragment,
@@ -15,10 +16,15 @@ var template = React.createElement(
     { id: "someid" },
     app.title
   ),
-  React.createElement(
+  app.subtitle && React.createElement(
     "p",
     null,
     app.subtitle
+  ),
+  React.createElement(
+    "p",
+    null,
+    app.options.length > 0 ? "Here are your options" : "No options"
   ),
   React.createElement(
     "ol",
@@ -76,4 +82,4 @@ var templateTwo = React.createElement(
   getLocation(user.location)
 );
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
