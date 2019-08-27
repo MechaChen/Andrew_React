@@ -1,12 +1,5 @@
 "use strict";
 
-// if statement
-// ternary operator
-// logical and operator
-
-// Challenge
-// only render the subtitle (and p tag) if subtitle exist - logical and operator
-// render new p tag - if options.length > 0 'Here are your options' : 'No options'
 var app = {
   title: "Indecision App",
   subtitle: "Put your life in the hands of computer",
@@ -69,21 +62,25 @@ function getLocation(location) {
   }
 }
 
+var count = 0;
+var addOne = function addOne() {
+  return console.log("addOne");
+};
 var templateTwo = React.createElement(
   "div",
   null,
   React.createElement(
     "h1",
     null,
-    user.name ? user.name : "Anonymous"
+    "Count: ",
+    count
   ),
-  user.age > 18 && React.createElement(
-    "p",
-    null,
-    "Age: ",
-    user.age
-  ),
-  getLocation(user.location)
+  React.createElement(
+    "button",
+    { onClick: addOne },
+    "+1"
+  )
 );
+console.log(templateTwo);
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);

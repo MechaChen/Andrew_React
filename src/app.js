@@ -1,16 +1,9 @@
-// if statement
-// ternary operator
-// logical and operator
-
-// Challenge
-// only render the subtitle (and p tag) if subtitle exist - logical and operator
-// render new p tag - if options.length > 0 'Here are your options' : 'No options'
-var app = {
+const app = {
   title: "Indecision App",
   subtitle: "Put your life in the hands of computer",
   options: ["One", "Two"]
 };
-var template = (
+const template = (
   <React.Fragment>
     <h1 id="someid">{app.title}</h1>
     {app.subtitle && <p>{app.subtitle}</p>}
@@ -22,9 +15,9 @@ var template = (
     </ol>
   </React.Fragment>
 );
-var appRoot = document.getElementById("app");
+const appRoot = document.getElementById("app");
 
-var user = {
+const user = {
   name: "Benson Chen",
   age: 17,
   location: "Taichung"
@@ -36,12 +29,14 @@ function getLocation(location) {
   }
 }
 
-var templateTwo = (
+let count = 0;
+const addOne = () => console.log("addOne");
+const templateTwo = (
   <div>
-    <h1>{user.name ? user.name : "Anonymous"}</h1>
-    {user.age > 18 && <p>Age: {user.age}</p>}
-    {getLocation(user.location)}
+    <h1>Count: {count}</h1>
+    <button onClick={addOne}>+1</button>
   </div>
 );
+console.log(templateTwo);
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
