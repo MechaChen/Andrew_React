@@ -1,8 +1,6 @@
 "use strict";
 
-// create app object title/subtitle
-// user title/subtitle in the template
-// render template
+// if statement
 var app = {
   title: "Indecision App",
   subtitle: "Put your life in the hands of computer"
@@ -47,6 +45,15 @@ var user = {
   age: 25,
   location: "Taichung"
 };
+
+function getLocation(location) {
+  if (location) {
+    return location;
+  } else {
+    return "Unknow";
+  }
+}
+
 var templateTwo = React.createElement(
   "div",
   null,
@@ -65,8 +72,8 @@ var templateTwo = React.createElement(
     "p",
     null,
     "Location: ",
-    user.location
+    getLocation(user.location)
   )
 );
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);

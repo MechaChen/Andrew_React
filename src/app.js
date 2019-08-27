@@ -1,6 +1,4 @@
-// create app object title/subtitle
-// user title/subtitle in the template
-// render template
+// if statement
 var app = {
   title: "Indecision App",
   subtitle: "Put your life in the hands of computer"
@@ -23,12 +21,21 @@ var user = {
   age: 25,
   location: "Taichung"
 };
+
+function getLocation(location) {
+  if (location) {
+    return location;
+  } else {
+    return "Unknow";
+  }
+}
+
 var templateTwo = (
   <div>
     <h1>{user.name}</h1>
     <p>Age: {user.age}</p>
-    <p>Location: {user.location}</p>
+    <p>Location: {getLocation(user.location)}</p>
   </div>
 );
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
