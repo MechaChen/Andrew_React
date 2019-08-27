@@ -3,6 +3,10 @@
 // if statement
 // ternary operator
 // logical and operator
+
+// Challenge
+// only render the subtitle (and p tag) if subtitle exist - logical and operator
+// render new p tag - if options.length > 0 'Here are your options' : 'No options'
 var app = {
   title: "Indecision App",
   subtitle: "Put your life in the hands of computer",
