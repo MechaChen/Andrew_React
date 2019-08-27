@@ -11,17 +11,15 @@ var template = (
 );
 var appRoot = document.getElementById("app");
 
-// Create a templateTwo var JSX expression
-// div
-//  h1 -> Your Name
-//   p -> Age: Your Age
-//   p -> Location
-var template2 = (
+var userName = "Benson Chen";
+var userAge = 25;
+var userLocation = "Taichung";
+var templateTwo = (
   <div>
-    <h1>Benson Chen</h1>
-    <p>Age: 25</p>
-    <p>Taichung</p>
+    <h1>{userName}</h1>
+    <p>Age: {userAge}</p>
+    <p>Location: {userLocation}</p>
   </div>
 );
 
-ReactDOM.render(template2, appRoot);
+ReactDOM.render(templateTwo, appRoot);

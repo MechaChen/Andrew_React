@@ -35,29 +35,29 @@ var template = React.createElement(
 );
 var appRoot = document.getElementById("app");
 
-// Create a templateTwo var JSX expression
-// div
-//  h1 -> Your Name
-//   p -> Age: Your Age
-//   p -> Location
-var template2 = React.createElement(
+var userName = "Benson Chen";
+var userAge = 25;
+var userLocation = "Taichung";
+var templateTwo = React.createElement(
   "div",
   null,
   React.createElement(
     "h1",
     null,
-    "Benson Chen"
+    userName
   ),
   React.createElement(
     "p",
     null,
-    "Age: 25"
+    "Age: ",
+    userAge
   ),
   React.createElement(
     "p",
     null,
-    "Taichung"
+    "Location: ",
+    userLocation
   )
 );
 
-ReactDOM.render(template2, appRoot);
+ReactDOM.render(templateTwo, appRoot);
