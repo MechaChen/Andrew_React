@@ -1,17 +1,24 @@
 "use strict";
 
+// create app object title/subtitle
+// user title/subtitle in the template
+// render template
+var app = {
+  title: "Indecision App",
+  subtitle: "Put your life in the hands of computer"
+};
 var template = React.createElement(
   React.Fragment,
   null,
   React.createElement(
     "h1",
     { id: "someid" },
-    "Indecision App"
+    app.title
   ),
   React.createElement(
     "p",
     null,
-    "This is some info"
+    app.subtitle
   ),
   React.createElement(
     "ol",
@@ -62,4 +69,4 @@ var templateTwo = React.createElement(
   )
 );
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);

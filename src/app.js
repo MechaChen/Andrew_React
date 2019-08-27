@@ -1,7 +1,14 @@
+// create app object title/subtitle
+// user title/subtitle in the template
+// render template
+var app = {
+  title: "Indecision App",
+  subtitle: "Put your life in the hands of computer"
+};
 var template = (
   <React.Fragment>
-    <h1 id="someid">Indecision App</h1>
-    <p>This is some info</p>
+    <h1 id="someid">{app.title}</h1>
+    <p>{app.subtitle}</p>
     <ol>
       <li>Item one</li>
       <li>Item two</li>
@@ -24,4 +31,4 @@ var templateTwo = (
   </div>
 );
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
