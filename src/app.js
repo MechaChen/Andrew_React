@@ -1,4 +1,5 @@
 // if statement
+// ternary operator
 var app = {
   title: "Indecision App",
   subtitle: "Put your life in the hands of computer"
@@ -17,7 +18,7 @@ var template = (
 var appRoot = document.getElementById("app");
 
 var user = {
-  name: "Benson Chen",
+  // name: "Benson Chen",
   age: 25,
   location: "Taichung"
 };
@@ -30,7 +31,7 @@ function getLocation(location) {
 
 var templateTwo = (
   <div>
-    <h1>{user.name}</h1>
+    <h1>{user.name ? user.name : "Anonymous"}</h1>
     <p>Age: {user.age}</p>
     {getLocation(user.location)}
   </div>

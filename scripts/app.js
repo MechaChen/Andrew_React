@@ -1,6 +1,7 @@
 "use strict";
 
 // if statement
+// ternary operator
 var app = {
   title: "Indecision App",
   subtitle: "Put your life in the hands of computer"
@@ -41,7 +42,7 @@ var template = React.createElement(
 var appRoot = document.getElementById("app");
 
 var user = {
-  name: "Benson Chen",
+  // name: "Benson Chen",
   age: 25,
   location: "Taichung"
 };
@@ -63,7 +64,7 @@ var templateTwo = React.createElement(
   React.createElement(
     "h1",
     null,
-    user.name
+    user.name ? user.name : "Anonymous"
   ),
   React.createElement(
     "p",
