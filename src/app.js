@@ -11,14 +11,16 @@ var template = (
 );
 var appRoot = document.getElementById("app");
 
-var userName = "Benson Chen";
-var userAge = 25;
-var userLocation = "Taichung";
+var user = {
+  name: "Benson Chen",
+  age: 25,
+  location: "Taichung"
+};
 var templateTwo = (
   <div>
-    <h1>{userName}</h1>
-    <p>Age: {userAge}</p>
-    <p>Location: {userLocation}</p>
+    <h1>{user.name}</h1>
+    <p>Age: {user.age}</p>
+    <p>Location: {user.location}</p>
   </div>
 );
 
