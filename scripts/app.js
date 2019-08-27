@@ -1,14 +1,38 @@
 "use strict";
 
-// [CMD] - "yarn global add bable-cli@6.24.1"
-// use [CMD] - "babel --help" to check installation
-// [CMD] - "yarn init" to add package.json
-// [CMD] - "yarn add babel-preset-react@6.24.1 babel-preset-env@1.5.2" to install preset react & event(for ES6)
-// [CMD] - "babel src/app.js --out-flie=scripts/app.js --presets=env,react"
 var template = React.createElement(
-  "h1",
-  { id: "someid" },
-  "Does this chanage?!"
+  React.Fragment,
+  null,
+  React.createElement(
+    "h1",
+    { id: "someid" },
+    "Indecision App"
+  ),
+  React.createElement(
+    "p",
+    null,
+    "This is some info"
+  ),
+  React.createElement(
+    "ol",
+    null,
+    React.createElement(
+      "li",
+      null,
+      "Item one"
+    ),
+    React.createElement(
+      "li",
+      null,
+      "Item two"
+    ),
+    React.createElement(
+      "li",
+      null,
+      "Item three"
+    )
+  )
 );
 var appRoot = document.getElementById("app");
-ReactDOM.render(template, appRoot);
+
+ReactDOM.render(template2, appRoot);
