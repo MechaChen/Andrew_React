@@ -2,6 +2,7 @@
 
 // if statement
 // ternary operator
+// logical and operator
 var app = {
   title: "Indecision App",
   subtitle: "Put your life in the hands of computer"
@@ -42,8 +43,8 @@ var template = React.createElement(
 var appRoot = document.getElementById("app");
 
 var user = {
-  // name: "Benson Chen",
-  age: 25,
+  name: "Benson Chen",
+  age: 17,
   location: "Taichung"
 };
 
@@ -66,7 +67,7 @@ var templateTwo = React.createElement(
     null,
     user.name ? user.name : "Anonymous"
   ),
-  React.createElement(
+  user.age > 18 && React.createElement(
     "p",
     null,
     "Age: ",
