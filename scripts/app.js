@@ -66,6 +66,16 @@ var count = 0;
 var addOne = function addOne() {
   return console.log("addOne");
 };
+// Challenge
+// Make button "-1" -setup minusOne function and register - log 'minusOne'
+// Make reset button 'reset' - setup reset function - log 'reset'
+var minusOne = function minusOne() {
+  return console.log("minusOne");
+};
+var reset = function reset() {
+  return console.log("reset");
+};
+
 var templateTwo = React.createElement(
   "div",
   null,
@@ -79,8 +89,17 @@ var templateTwo = React.createElement(
     "button",
     { onClick: addOne },
     "+1"
+  ),
+  React.createElement(
+    "button",
+    { onClick: minusOne },
+    "-1"
+  ),
+  React.createElement(
+    "button",
+    { onClick: reset },
+    "reset"
   )
 );
-console.log(templateTwo);
 
 ReactDOM.render(templateTwo, appRoot);
