@@ -3,13 +3,26 @@
 var app = {
   title: "Indecision App",
   subtitle: "Put your life in the hands of computer",
-  options: ["One", "Two"]
+  options: []
 };
 
 var onFormSubmit = function onFormSubmit(e) {
   e.preventDefault();
 
-  console.log("form submitted~");
+  var elements = e.target.elements;
+  var option = elements.option;
+  var value = option.value;
+
+  console.log(elements);
+  // "option" came from input name
+  console.log(option);
+  console.log(value);
+  console.log(e.target.elements.option.value);
+
+  if (option) {
+    app.options.push(option);
+    e.target.elements.option.value = "";
+  }
 };
 
 var template = React.createElement(
@@ -48,6 +61,11 @@ var template = React.createElement(
       null,
       "Item three"
     )
+  ),
+  React.createElement(
+    "p",
+    null,
+    app.options.length
   ),
   React.createElement(
     "form",
