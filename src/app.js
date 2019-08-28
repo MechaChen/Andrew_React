@@ -39,11 +39,13 @@ const render = () => {
       )}
       <button onClick={onRemoveAll}>Remove All</button>
       {number.map(number => {
-        return <p>Number : {number}</p>;
+        return <p key={number}>Number : {number}</p>;
       })}
       <ol>
-        <li>Item One</li>
-        <li>Item Two</li>
+        {/* map over app.options getting back an array of list (set key and text) */
+        app.options.map(option => (
+          <li key={option}>{option}</li>
+        ))}
       </ol>
       <p>{app.options.length}</p>
       <form onSubmit={onFormSubmit}>

@@ -62,7 +62,7 @@ var render = function render() {
     number.map(function (number) {
       return React.createElement(
         "p",
-        null,
+        { key: number },
         "Number : ",
         number
       );
@@ -70,16 +70,14 @@ var render = function render() {
     React.createElement(
       "ol",
       null,
-      React.createElement(
-        "li",
-        null,
-        "Item One"
-      ),
-      React.createElement(
-        "li",
-        null,
-        "Item Two"
-      )
+      /* map over app.options getting back an array of list (set key and text) */
+      app.options.map(function (option) {
+        return React.createElement(
+          "li",
+          { key: option },
+          option
+        );
+      })
     ),
     React.createElement(
       "p",
