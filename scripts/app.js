@@ -65,35 +65,40 @@ function getLocation(location) {
 var count = 0;
 var addOne = function addOne() {
   count++;
-  console.log("Count : " + count);
+  renderCounterApp();
 };
 var minusOne = function minusOne() {};
 var reset = function reset() {};
 
-var templateTwo = React.createElement(
-  "div",
-  null,
-  React.createElement(
-    "h1",
+// Wrap all Virtual DOM(JSX expression) & render func into a NEW Function
+var renderCounterApp = function renderCounterApp() {
+  var templateTwo = React.createElement(
+    "div",
     null,
-    "Count: ",
-    count
-  ),
-  React.createElement(
-    "button",
-    { onClick: addOne },
-    "+1"
-  ),
-  React.createElement(
-    "button",
-    { onClick: minusOne },
-    "-1"
-  ),
-  React.createElement(
-    "button",
-    { onClick: reset },
-    "reset"
-  )
-);
+    React.createElement(
+      "h1",
+      null,
+      "Count: ",
+      count
+    ),
+    React.createElement(
+      "button",
+      { onClick: addOne },
+      "+1"
+    ),
+    React.createElement(
+      "button",
+      { onClick: minusOne },
+      "-1"
+    ),
+    React.createElement(
+      "button",
+      { onClick: reset },
+      "reset"
+    )
+  );
 
-ReactDOM.render(templateTwo, appRoot);
+  ReactDOM.render(templateTwo, appRoot);
+};
+
+renderCounterApp();

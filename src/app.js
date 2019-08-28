@@ -30,23 +30,25 @@ function getLocation(location) {
 }
 
 let count = 0;
-// this way doesn't rerender the DOM
-// the Count on the webpage won't change
-// but will on console
 const addOne = () => {
   count++;
-  console.log(`Count : ${count}`);
+  renderCounterApp();
 };
 const minusOne = () => {};
 const reset = () => {};
 
-const templateTwo = (
-  <div>
-    <h1>Count: {count}</h1>
-    <button onClick={addOne}>+1</button>
-    <button onClick={minusOne}>-1</button>
-    <button onClick={reset}>reset</button>
-  </div>
-);
+// Wrap all Virtual DOM(JSX expression) & render func into a NEW Function
+const renderCounterApp = () => {
+  const templateTwo = (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={addOne}>+1</button>
+      <button onClick={minusOne}>-1</button>
+      <button onClick={reset}>reset</button>
+    </div>
+  );
 
-ReactDOM.render(templateTwo, appRoot);
+  ReactDOM.render(templateTwo, appRoot);
+};
+
+renderCounterApp();
