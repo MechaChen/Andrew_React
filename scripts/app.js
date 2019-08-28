@@ -41,72 +41,18 @@ var template = React.createElement(
       null,
       "Item three"
     )
+  ),
+  React.createElement(
+    "form",
+    null,
+    React.createElement("input", { type: "text", name: "option" }),
+    React.createElement(
+      "button",
+      null,
+      "Add Option"
+    )
   )
 );
+
 var appRoot = document.getElementById("app");
-
-var user = {
-  name: "Benson Chen",
-  age: 17,
-  location: "Taichung"
-};
-
-function getLocation(location) {
-  if (location) {
-    return React.createElement(
-      "p",
-      null,
-      "Location: ",
-      location
-    );
-  }
-}
-
-var count = 0;
-var addOne = function addOne() {
-  count++;
-  renderCounterApp();
-};
-var minusOne = function minusOne() {
-  // substract 1 from count - rerender
-  count--;
-  renderCounterApp();
-};
-var reset = function reset() {
-  // set count to 0 - rerender
-  count = 0;
-  renderCounterApp();
-};
-
-// Wrap all Virtual DOM(JSX expression) & render func into a NEW Function
-var renderCounterApp = function renderCounterApp() {
-  var templateTwo = React.createElement(
-    "div",
-    null,
-    React.createElement(
-      "h1",
-      null,
-      "Count: ",
-      count
-    ),
-    React.createElement(
-      "button",
-      { onClick: addOne },
-      "+1"
-    ),
-    React.createElement(
-      "button",
-      { onClick: minusOne },
-      "-1"
-    ),
-    React.createElement(
-      "button",
-      { onClick: reset },
-      "reset"
-    )
-  );
-
-  ReactDOM.render(templateTwo, appRoot);
-};
-
-renderCounterApp();
+ReactDOM.render(template, appRoot);
