@@ -5,6 +5,13 @@ var app = {
   subtitle: "Put your life in the hands of computer",
   options: ["One", "Two"]
 };
+
+var onFormSubmit = function onFormSubmit(e) {
+  e.preventDefault();
+
+  console.log("form submitted~");
+};
+
 var template = React.createElement(
   React.Fragment,
   null,
@@ -44,7 +51,7 @@ var template = React.createElement(
   ),
   React.createElement(
     "form",
-    null,
+    { onSubmit: onFormSubmit },
     React.createElement("input", { type: "text", name: "option" }),
     React.createElement(
       "button",
