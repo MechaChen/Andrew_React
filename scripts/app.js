@@ -18,11 +18,15 @@ var onFormSubmit = function onFormSubmit(e) {
   }
 };
 
+var onRemoveAll = function onRemoveAll() {
+  app.options = [];
+  render();
+};
+
 var appRoot = document.getElementById("app");
 
-// Create render function that render the new jsx
-// Call it rightaway
-// Call it after options array added to
+// create "Remove All" button above list
+// on click -> wipe the array -> rerender
 
 var render = function render() {
   var template = React.createElement(
@@ -52,23 +56,13 @@ var render = function render() {
       "No options"
     ),
     React.createElement(
+      "button",
+      { onClick: onRemoveAll },
+      "Remove All"
+    ),
+    React.createElement(
       "ol",
       null,
-      React.createElement(
-        "li",
-        null,
-        "Item one"
-      ),
-      React.createElement(
-        "li",
-        null,
-        "Item two"
-      ),
-      React.createElement(
-        "li",
-        null,
-        "Item three"
-      ),
       app.options.map(function (option) {
         return React.createElement(
           "li",
