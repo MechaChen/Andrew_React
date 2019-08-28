@@ -23,8 +23,7 @@ const onRemoveAll = () => {
 
 const appRoot = document.getElementById("app");
 
-// create "Remove All" button above list
-// on click -> wipe the array -> rerender
+const number = [55, 101, 1000];
 
 const render = () => {
   const template = (
@@ -39,10 +38,12 @@ const render = () => {
         <p>No options</p>
       )}
       <button onClick={onRemoveAll}>Remove All</button>
+      {number.map(number => {
+        return <p>Number : {number}</p>;
+      })}
       <ol>
-        {app.options.map(option => (
-          <li key={option}>{option}</li>
-        ))}
+        <li>Item One</li>
+        <li>Item Two</li>
       </ol>
       <p>{app.options.length}</p>
       <form onSubmit={onFormSubmit}>

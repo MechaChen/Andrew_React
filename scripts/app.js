@@ -25,8 +25,7 @@ var onRemoveAll = function onRemoveAll() {
 
 var appRoot = document.getElementById("app");
 
-// create "Remove All" button above list
-// on click -> wipe the array -> rerender
+var number = [55, 101, 1000];
 
 var render = function render() {
   var template = React.createElement(
@@ -60,16 +59,27 @@ var render = function render() {
       { onClick: onRemoveAll },
       "Remove All"
     ),
+    number.map(function (number) {
+      return React.createElement(
+        "p",
+        null,
+        "Number : ",
+        number
+      );
+    }),
     React.createElement(
       "ol",
       null,
-      app.options.map(function (option) {
-        return React.createElement(
-          "li",
-          { key: option },
-          option
-        );
-      })
+      React.createElement(
+        "li",
+        null,
+        "Item One"
+      ),
+      React.createElement(
+        "li",
+        null,
+        "Item Two"
+      )
     ),
     React.createElement(
       "p",
