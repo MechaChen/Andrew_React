@@ -34,8 +34,16 @@ const addOne = () => {
   count++;
   renderCounterApp();
 };
-const minusOne = () => {};
-const reset = () => {};
+const minusOne = () => {
+  // substract 1 from count - rerender
+  count--;
+  renderCounterApp();
+};
+const reset = () => {
+  // set count to 0 - rerender
+  count = 0;
+  renderCounterApp();
+};
 
 // Wrap all Virtual DOM(JSX expression) & render func into a NEW Function
 const renderCounterApp = () => {

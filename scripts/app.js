@@ -67,8 +67,16 @@ var addOne = function addOne() {
   count++;
   renderCounterApp();
 };
-var minusOne = function minusOne() {};
-var reset = function reset() {};
+var minusOne = function minusOne() {
+  // substract 1 from count - rerender
+  count--;
+  renderCounterApp();
+};
+var reset = function reset() {
+  // set count to 0 - rerender
+  count = 0;
+  renderCounterApp();
+};
 
 // Wrap all Virtual DOM(JSX expression) & render func into a NEW Function
 var renderCounterApp = function renderCounterApp() {
