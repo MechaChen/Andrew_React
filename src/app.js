@@ -30,12 +30,15 @@ function getLocation(location) {
 }
 
 let count = 0;
-const addOne = () => console.log("addOne");
-// Challenge
-// Make button "-1" -setup minusOne function and register - log 'minusOne'
-// Make reset button 'reset' - setup reset function - log 'reset'
-const minusOne = () => console.log("minusOne");
-const reset = () => console.log("reset");
+// this way doesn't rerender the DOM
+// the Count on the webpage won't change
+// but will on console
+const addOne = () => {
+  count++;
+  console.log(`Count : ${count}`);
+};
+const minusOne = () => {};
+const reset = () => {};
 
 const templateTwo = (
   <div>

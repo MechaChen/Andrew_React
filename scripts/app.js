@@ -64,17 +64,11 @@ function getLocation(location) {
 
 var count = 0;
 var addOne = function addOne() {
-  return console.log("addOne");
+  count++;
+  console.log("Count : " + count);
 };
-// Challenge
-// Make button "-1" -setup minusOne function and register - log 'minusOne'
-// Make reset button 'reset' - setup reset function - log 'reset'
-var minusOne = function minusOne() {
-  return console.log("minusOne");
-};
-var reset = function reset() {
-  return console.log("reset");
-};
+var minusOne = function minusOne() {};
+var reset = function reset() {};
 
 var templateTwo = React.createElement(
   "div",
