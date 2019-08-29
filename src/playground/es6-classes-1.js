@@ -61,6 +61,8 @@ const me = new Traveler("Benson Chen", 25, "Taichung");
 console.log(me);
 console.log(me.getGreeting());
 
-const other = new Traveler();
+// Andrew complement
+const other = new Traveler(undefined, undefined, "Nowhere");
+// -> Hi. I am Anonymous! I'm visiting from Nowhere
 console.log(other);
 console.log(other.getGreeting());
