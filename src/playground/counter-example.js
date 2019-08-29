@@ -9,14 +9,18 @@ class Counter extends React.Component {
     };
   }
   handleAddOne() {
-    this.setState(prevState => {
-      return {
-        count: prevState.count + 1
-      };
+    // this.setState(prevState => {
+    //   return {
+    //     count: prevState.count + 1
+    //   };
+    // });
+
+    // Old Fashion
+    this.setState({
+      count: this.state.count + 1
     });
   }
   handleMinusOne() {
-    // Call this.setState decrement the count by 1
     this.setState(prevState => {
       return {
         count: prevState.count - 1
@@ -24,10 +28,20 @@ class Counter extends React.Component {
     });
   }
   handleReset() {
-    this.setState(() => {
-      return {
-        count: 0
-      };
+    // this.setState(() => {
+    //   return {
+    //     count: 0
+    //   };
+    // });
+
+    // Old Fashion
+    // work in Asynchronous way
+    // this make this.state.count still in old state, not 0
+    this.setState({
+      count: 0
+    });
+    this.setState({
+      count: this.state.count + 1
     });
   }
   render() {
