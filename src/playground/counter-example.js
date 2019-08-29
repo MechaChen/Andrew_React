@@ -9,7 +9,6 @@ class Counter extends React.Component {
     };
   }
   handleAddOne() {
-    // use this.setState() to rerender
     this.setState(prevState => {
       return {
         count: prevState.count + 1
@@ -17,7 +16,12 @@ class Counter extends React.Component {
     });
   }
   handleMinusOne() {
-    console.log("handleMinusOne");
+    // Call this.setState decrement the count by 1
+    this.setState(prevState => {
+      return {
+        count: prevState.count - 1
+      };
+    });
   }
   handleReset() {
     console.log("handleReset");
