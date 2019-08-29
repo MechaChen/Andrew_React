@@ -35,12 +35,32 @@ class Student extends Person {
   }
 }
 
-const me = new Student("Benson Chen", 25, "Mechanical Engineer");
-console.log(me);
-console.log(me.hasMajor());
-console.log(me.getDescription());
+// Traveler -> Person
+// Add support for homeLocation
+// Override getGreeting
+// 1. Hi. I am Andrew Mead. I'm visiting from Philadelphia.
+// 2. Hi. I am Andrew Mead.
 
-const other = new Student();
+class Traveler extends Person {
+  constructor(name, age, homeLocation) {
+    super(name, age);
+    this.homeLocation = homeLocation;
+  }
+  getGreeting() {
+    let greeting = super.getGreeting();
+
+    if (this.homeLocation) {
+      greeting += ` I'm visiting from ${this.homeLocation}`;
+    }
+
+    return greeting;
+  }
+}
+
+const me = new Traveler("Benson Chen", 25, "Taichung");
+console.log(me);
+console.log(me.getGreeting());
+
+const other = new Traveler();
 console.log(other);
-console.log(other.hasMajor());
-console.log(other.getDescription());
+console.log(other.getGreeting());

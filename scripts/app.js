@@ -75,12 +75,44 @@ var Student = function (_Person) {
   return Student;
 }(Person);
 
-var me = new Student("Benson Chen", 25, "Mechanical Engineer");
-console.log(me);
-console.log(me.hasMajor());
-console.log(me.getDescription());
+// Traveler -> Person
+// Add support for homeLocation
+// Override getGreeting
+// 1. Hi. I am Andrew Mead. I'm visiting from Philadelphia.
+// 2. Hi. I am Andrew Mead.
 
-var other = new Student();
+var Traveler = function (_Person2) {
+  _inherits(Traveler, _Person2);
+
+  function Traveler(name, age, homeLocation) {
+    _classCallCheck(this, Traveler);
+
+    var _this2 = _possibleConstructorReturn(this, (Traveler.__proto__ || Object.getPrototypeOf(Traveler)).call(this, name, age));
+
+    _this2.homeLocation = homeLocation;
+    return _this2;
+  }
+
+  _createClass(Traveler, [{
+    key: "getGreeting",
+    value: function getGreeting() {
+      var greeting = _get(Traveler.prototype.__proto__ || Object.getPrototypeOf(Traveler.prototype), "getGreeting", this).call(this);
+
+      if (this.homeLocation) {
+        greeting += " I'm visiting from " + this.homeLocation;
+      }
+
+      return greeting;
+    }
+  }]);
+
+  return Traveler;
+}(Person);
+
+var me = new Traveler("Benson Chen", 25, "Taichung");
+console.log(me);
+console.log(me.getGreeting());
+
+var other = new Traveler();
 console.log(other);
-console.log(other.hasMajor());
-console.log(other.getDescription());
+console.log(other.getGreeting());
