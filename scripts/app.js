@@ -19,13 +19,18 @@ var Counter = function (_React$Component) {
     _this.handleAddOne = _this.handleAddOne.bind(_this);
     _this.handleMinusOne = _this.handleMinusOne.bind(_this);
     _this.handleReset = _this.handleReset.bind(_this);
+    _this.setState = {
+      count: 0
+    };
     return _this;
   }
 
   _createClass(Counter, [{
     key: "handleAddOne",
     value: function handleAddOne() {
-      console.log("handleAddOne");
+      // this way won't rerender the state
+      this.state.count = this.state.count + 1;
+      console.log(this.state);
     }
   }, {
     key: "handleMinusOne",
