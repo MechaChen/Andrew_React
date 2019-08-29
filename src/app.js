@@ -39,10 +39,6 @@ class Action extends React.Component {
   }
 }
 
-// Add Remove All button
-// Setup handleRemoveAll -> alert some message
-// setup onClick to fire the method
-
 class Options extends React.Component {
   handleRemoveAll() {
     alert("Remove All Done!");
@@ -65,9 +61,27 @@ class Option extends React.Component {
   }
 }
 
+// 1. Setup the form with text input with submit button
+// 2. Wire up onSubmit
+// 3. handleAddOption -> fetch the value typed -> if value, then alert
+
 class AddOption extends React.Component {
+  handleAddOption(e) {
+    e.preventDefault();
+    const option = e.target.elements.option.value.trim();
+    if (option) {
+      alert(option);
+    }
+  }
   render() {
-    return <div>AddOption component here</div>;
+    return (
+      <div>
+        <form onSubmit={this.handleAddOption}>
+          <input type="text" name="option" />
+          <button>{"add option".toUpperCase()}</button>
+        </form>
+      </div>
+    );
   }
 }
 

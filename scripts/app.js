@@ -102,10 +102,6 @@ var Action = function (_React$Component3) {
   return Action;
 }(React.Component);
 
-// Add Remove All button
-// Setup handleRemoveAll -> alert some message
-// setup onClick to fire the method
-
 var Options = function (_React$Component4) {
   _inherits(Options, _React$Component4);
 
@@ -164,6 +160,10 @@ var Option = function (_React$Component5) {
   return Option;
 }(React.Component);
 
+// 1. Setup the form with text input with submit button
+// 2. Wire up onSubmit
+// 3. handleAddOption -> fetch the value typed -> if value, then alert
+
 var AddOption = function (_React$Component6) {
   _inherits(AddOption, _React$Component6);
 
@@ -174,12 +174,30 @@ var AddOption = function (_React$Component6) {
   }
 
   _createClass(AddOption, [{
+    key: "handleAddOption",
+    value: function handleAddOption(e) {
+      e.preventDefault();
+      var option = e.target.elements.option.value.trim();
+      if (option) {
+        alert(option);
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       return React.createElement(
         "div",
         null,
-        "AddOption component here"
+        React.createElement(
+          "form",
+          { onSubmit: this.handleAddOption },
+          React.createElement("input", { type: "text", name: "option" }),
+          React.createElement(
+            "button",
+            null,
+            "add option".toUpperCase()
+          )
+        )
       );
     }
   }]);
