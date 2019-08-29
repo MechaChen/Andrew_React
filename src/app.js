@@ -35,7 +35,19 @@ class Action extends React.Component {
 // Options -> Options component here
 class Options extends React.Component {
   render() {
-    return <div>Options component here</div>;
+    return (
+      <div>
+        Options component here
+        <Option />
+      </div>
+    );
+  }
+}
+
+// Option -> Option component here
+class Option extends React.Component {
+  render() {
+    return <div>Option component here</div>;
   }
 }
 
