@@ -8,7 +8,7 @@ class IndecisionApp extends React.Component {
       <div>
         <Header title={title} subtitle={subtitle} />
         <Action />
-        <Options />
+        <Options options={options} />
         <AddOption />
       </div>
     );
@@ -37,12 +37,16 @@ class Action extends React.Component {
   }
 }
 
+// Setup options prop for Options component
+// Render the length of the array
+
 // Options -> Options component here
 class Options extends React.Component {
   render() {
     return (
       <div>
         Options component here
+        <p>Option Count: {this.props.options.length}</p>
         <Option />
       </div>
     );
