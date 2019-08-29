@@ -27,21 +27,20 @@ class Header extends React.Component {
 }
 
 class Action extends React.Component {
+  handlePick() {
+    alert("handlePick");
+  }
   render() {
     return (
       <div>
-        <button>What should I do?</button>
+        <button onClick={this.handlePick}>What should I do?</button>
       </div>
     );
   }
 }
 
-// Render new p tag for each option (set text, set key)
-
-// Options -> Options component here
 class Options extends React.Component {
   render() {
-    console.log(this.props.options[0]);
     return (
       <div>
         {this.props.options.map(option => (
@@ -52,14 +51,12 @@ class Options extends React.Component {
   }
 }
 
-// Option -> Option component here
 class Option extends React.Component {
   render() {
     return <p>{this.props.optionText}</p>;
   }
 }
 
-// AddOption -> AddOption component here
 class AddOption extends React.Component {
   render() {
     return <div>AddOption component here</div>;
