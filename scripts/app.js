@@ -1,37 +1,37 @@
 "use strict";
 
-var app = {
-  showMess: false,
-  message: "Hey. There are some details you can now see!"
-};
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var toggleMess = function toggleMess() {
-  app.showMess = !app.showMess;
-  render();
-};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var render = function render() {
-  var jsx = React.createElement(
-    React.Fragment,
-    null,
-    React.createElement(
-      "h1",
-      null,
-      "Visibility Toggle"
-    ),
-    React.createElement(
-      "button",
-      { onClick: toggleMess },
-      app.showMess ? "Show details" : "Hide details"
-    ),
-    app.showMess && React.createElement(
-      "p",
-      null,
-      app.message
-    )
-  );
+// Car
+// make: the brand of the vehicle
+// model: the name of a car product
+// vin
+// getDescription
 
-  ReactDOM.render(jsx, document.getElementById("app"));
-};
+var Person = function () {
+  // must be ES6 function type
+  function Person() {
+    var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "Anonymous";
 
-render();
+    _classCallCheck(this, Person);
+
+    this.name = name;
+  }
+
+  _createClass(Person, [{
+    key: "getGreeting",
+    value: function getGreeting() {
+      return "Hi. I am " + this.name + "!";
+    }
+  }]);
+
+  return Person;
+}();
+
+var me = new Person("Benson Chen");
+console.log(me.getGreeting());
+
+var other = new Person();
+console.log(other.getGreeting());
