@@ -15,8 +15,32 @@ class Person {
   }
 }
 
-const me = new Person("Benson Chen", 25);
-console.log(me.getGreeting(), me.getDescription());
+class Student extends Person {
+  constructor(name, age, major) {
+    super(name, age); // call the Parent Constrcutor function
+    this.major = major;
+  }
+  hasMajor() {
+    return !!this.major; // use "!!" to change a string to a boolean
+  }
+  getDescription() {
+    // use super object to get Parent Method
+    let description = super.getDescription();
 
-const other = new Person();
-console.log(other.getGreeting(), other.getDescription());
+    if (this.hasMajor()) {
+      return (description += ` Their major is ${this.major}.`);
+    }
+
+    return description;
+  }
+}
+
+const me = new Student("Benson Chen", 25, "Mechanical Engineer");
+console.log(me);
+console.log(me.hasMajor());
+console.log(me.getDescription());
+
+const other = new Student();
+console.log(other);
+console.log(other.hasMajor());
+console.log(other.getDescription());
