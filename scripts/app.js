@@ -50,7 +50,6 @@ var Header = function (_React$Component2) {
   _createClass(Header, [{
     key: "render",
     value: function render() {
-      console.log(this.props);
       return React.createElement(
         "div",
         null,
@@ -98,8 +97,7 @@ var Action = function (_React$Component3) {
   return Action;
 }(React.Component);
 
-// Setup options prop for Options component
-// Render the length of the array
+// Render new p tag for each option (set text, set key)
 
 // Options -> Options component here
 
@@ -116,17 +114,13 @@ var Options = function (_React$Component4) {
   _createClass(Options, [{
     key: "render",
     value: function render() {
+      console.log(this.props.options[0]);
       return React.createElement(
         "div",
         null,
-        "Options component here",
-        React.createElement(
-          "p",
-          null,
-          "Option Count: ",
-          this.props.options.length
-        ),
-        React.createElement(Option, null)
+        this.props.options.map(function (option) {
+          return React.createElement(Option, { key: option, optionText: option });
+        })
       );
     }
   }]);
@@ -150,9 +144,9 @@ var Option = function (_React$Component5) {
     key: "render",
     value: function render() {
       return React.createElement(
-        "div",
+        "p",
         null,
-        "Option component here"
+        this.props.optionText
       );
     }
   }]);

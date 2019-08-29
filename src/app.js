@@ -17,7 +17,6 @@ class IndecisionApp extends React.Component {
 
 class Header extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <div>
         <h1>{this.props.title}</h1>
@@ -37,17 +36,17 @@ class Action extends React.Component {
   }
 }
 
-// Setup options prop for Options component
-// Render the length of the array
+// Render new p tag for each option (set text, set key)
 
 // Options -> Options component here
 class Options extends React.Component {
   render() {
+    console.log(this.props.options[0]);
     return (
       <div>
-        Options component here
-        <p>Option Count: {this.props.options.length}</p>
-        <Option />
+        {this.props.options.map(option => (
+          <Option key={option} optionText={option} />
+        ))}
       </div>
     );
   }
@@ -56,7 +55,7 @@ class Options extends React.Component {
 // Option -> Option component here
 class Option extends React.Component {
   render() {
-    return <div>Option component here</div>;
+    return <p>{this.props.optionText}</p>;
   }
 }
 
