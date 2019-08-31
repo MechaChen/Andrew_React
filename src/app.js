@@ -23,11 +23,7 @@ class IndecisionApp extends React.Component {
       return "This value have already existed.";
     }
 
-    this.setState(prevState => {
-      return {
-        options: prevState.options.concat(option)
-      };
-    });
+    this.setState(prevState => ({ options: prevState.options.concat(option) }));
   }
   render() {
     const subtitle = "Put your life in the hands of a computer";
