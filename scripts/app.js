@@ -33,6 +33,14 @@ var IndecisionApp = function (_React$Component) {
       });
     }
   }, {
+    key: "handleDeleteOption",
+    value: function handleDeleteOption(option) {
+      console.log(option);
+      // this.setState(prevState => ({
+      //   options: prevState.options.filter(option => option == option)
+      // }));
+    }
+  }, {
     key: "handlePick",
     value: function handlePick() {
       var randomNum = Math.floor(Math.random() * this.state.options.length);
@@ -67,7 +75,8 @@ var IndecisionApp = function (_React$Component) {
         }),
         React.createElement(Options, {
           options: this.state.options,
-          handleDeleteOptions: this.handleDeleteOptions
+          handleDeleteOptions: this.handleDeleteOptions,
+          handleDeleteOption: this.handleDeleteOption
         }),
         React.createElement(AddOption, { handleAddOption: this.handleAddOption })
       );
@@ -124,16 +133,27 @@ var Options = function Options(props) {
       "Remove All"
     ),
     props.options.map(function (option) {
-      return React.createElement(Option, { key: option, optionText: option });
+      return React.createElement(Option, {
+        key: option,
+        optionText: option,
+        handleDeleteOption: props.handleDeleteOption
+      });
     })
   );
 };
 
 var Option = function Option(props) {
   return React.createElement(
-    "p",
+    "div",
     null,
-    props.optionText
+    props.optionText,
+    React.createElement(
+      "button",
+      { onClick: function onClick(e) {
+          return props.handleDeleteOption(props.optionText);
+        } },
+      "remove"
+    )
   );
 };
 
