@@ -10,9 +10,19 @@ class IndecisionApp extends React.Component {
     };
   }
   componentDidMount() {
-    const json = localStorage.getItem("options");
-    const options = JSON.parse(json);
-    this.setState(() => ({ options }));
+    // avoid some bad data, like ['12'] into localStorage
+    try {
+      const json = localStorage.getItem("options");
+      const options = JSON.parse(json);
+
+      // if use localStorage.clear(), localStorage will be null
+      // options.length will fail
+      if (options) {
+        this.setState(() => ({ options }));
+      }
+    } catch (e) {
+      // Do nothing at all
+    }
   }
   // fire when props or state change
   componentDidUpdate(prevProps, prevState) {

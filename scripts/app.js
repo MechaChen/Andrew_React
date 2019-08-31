@@ -29,11 +29,21 @@ var IndecisionApp = function (_React$Component) {
   _createClass(IndecisionApp, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var json = localStorage.getItem("options");
-      var options = JSON.parse(json);
-      this.setState(function () {
-        return { options: options };
-      });
+      // avoid some bad data, like ['12'] into localStorage
+      try {
+        var json = localStorage.getItem("options");
+        var options = JSON.parse(json);
+
+        // if use localStorage.clear(), localStorage will be null
+        // options.length will fail
+        if (options) {
+          this.setState(function () {
+            return { options: options };
+          });
+        }
+      } catch (e) {
+        // Do nothing at all
+      }
     }
     // fire when props or state change
 
