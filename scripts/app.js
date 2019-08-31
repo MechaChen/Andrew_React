@@ -29,8 +29,11 @@ var IndecisionApp = function (_React$Component) {
   _createClass(IndecisionApp, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      console.log("componentDidMount");
-      console.log("fetching data");
+      var json = localStorage.getItem("options");
+      var options = JSON.parse(json);
+      this.setState(function () {
+        return { options: options };
+      });
     }
     // fire when props or state change
 
