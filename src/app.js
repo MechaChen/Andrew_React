@@ -14,9 +14,11 @@ class IndecisionApp extends React.Component {
     console.log("fetching data");
   }
   // fire when props or state change
-  componentDidUpdate(prevProps, prevstate) {
-    console.log("componentDidUpdate");
-    console.log("saving data");
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.options.length !== this.state.options.length) {
+      const json = JSON.stringify(this.state.options);
+      localStorage.setItem("options", json);
+    }
   }
   // fire when your component goes away
   componentWillUnmount() {
