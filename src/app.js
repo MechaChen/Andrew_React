@@ -21,10 +21,14 @@ class IndecisionApp extends React.Component {
     alert(option);
   }
   handleAddOption(option) {
+    if (!option) {
+      return "Enter some value.";
+    } else if (this.state.options.indexOf(option) > -1) {
+      return "This value have already existed.";
+    }
+
     this.setState(prevState => {
       return {
-        // use concat will return new array
-        // .push() add new element but keep the same array
         options: prevState.options.concat(option)
       };
     });
@@ -99,17 +103,20 @@ class AddOption extends React.Component {
   constructor(props) {
     super(props);
     this.handleAddOption = this.handleAddOption.bind(this);
+    this.state = {
+      error: ""
+    };
   }
   handleAddOption(e) {
     e.preventDefault();
     const option = e.target.elements.option.value.trim();
-    if (option) {
-      this.props.handleAddOption(option);
-    }
+    const error = this.props.handleAddOption(option);
+    this.setState(() => ({ error }));
   }
   render() {
     return (
       <div>
+        {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.handleAddOption}>
           <input type="text" name="option" />
           <button>{"add option".toUpperCase()}</button>
