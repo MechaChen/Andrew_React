@@ -2,6 +2,7 @@ class IndecisionApp extends React.Component {
   constructor(props) {
     super(props);
     this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
+    this.handleDeleteOption = this.handleDeleteOption.bind(this);
     this.handlePick = this.handlePick.bind(this);
     this.handleAddOption = this.handleAddOption.bind(this);
     this.state = {
@@ -11,11 +12,10 @@ class IndecisionApp extends React.Component {
   handleDeleteOptions() {
     this.setState(() => ({ options: [] }));
   }
-  handleDeleteOption(option) {
-    console.log(option);
-    // this.setState(prevState => ({
-    //   options: prevState.options.filter(option => option == option)
-    // }));
+  handleDeleteOption(optionToRemove) {
+    this.setState(prevState => ({
+      options: prevState.options.filter(option => option !== optionToRemove)
+    }));
   }
   handlePick() {
     const randomNum = Math.floor(Math.random() * this.state.options.length);

@@ -17,6 +17,7 @@ var IndecisionApp = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (IndecisionApp.__proto__ || Object.getPrototypeOf(IndecisionApp)).call(this, props));
 
     _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
+    _this.handleDeleteOption = _this.handleDeleteOption.bind(_this);
     _this.handlePick = _this.handlePick.bind(_this);
     _this.handleAddOption = _this.handleAddOption.bind(_this);
     _this.state = {
@@ -34,11 +35,14 @@ var IndecisionApp = function (_React$Component) {
     }
   }, {
     key: "handleDeleteOption",
-    value: function handleDeleteOption(option) {
-      console.log(option);
-      // this.setState(prevState => ({
-      //   options: prevState.options.filter(option => option == option)
-      // }));
+    value: function handleDeleteOption(optionToRemove) {
+      this.setState(function (prevState) {
+        return {
+          options: prevState.options.filter(function (option) {
+            return option !== optionToRemove;
+          })
+        };
+      });
     }
   }, {
     key: "handlePick",
