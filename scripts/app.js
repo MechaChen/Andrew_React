@@ -59,13 +59,12 @@ var IndecisionApp = function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var title = "Indecision";
       var subtitle = "Put your life in the hands of a computer";
 
       return React.createElement(
         "div",
         null,
-        React.createElement(Header, { title: title, subtitle: subtitle }),
+        React.createElement(Header, null),
         React.createElement(Action, {
           hasOptions: this.state.options.length > 0,
           handlePick: this.handlePick
@@ -91,12 +90,16 @@ var Header = function Header(props) {
       null,
       props.title
     ),
-    React.createElement(
-      "h2",
+    props.subtitle && React.createElement(
+      "p",
       null,
       props.subtitle
     )
   );
+};
+
+Header.defaultProps = {
+  title: "Indecision"
 };
 
 var Action = function Action(props) {
