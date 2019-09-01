@@ -1,5 +1,7 @@
 console.log("utils.js is running");
 
-const square = x => x * x;
+export const square = x => x * x;
 
-export { square };
+export const add = (a, b) => a + b;
+
+// export { square, add };
