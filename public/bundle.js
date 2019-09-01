@@ -69,39 +69,39 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__person__ = __webpack_require__(2);
-// import { square, add } from "./utils";
-
-// console.log("app.js is running!");
-// console.log(square(4));
-// console.log(add(100, 23));
-
-// person.js
-// named export isAdult(18) - true if adult, otherwise false
-// named export canDrink(18) - true if 21 and over, otherwise fasle
-
-// import isAdult and canDrink
-// use both printing result to the console
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(1);
 
 
+console.log("app.js is running!");
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* square */](4));
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* add */](100, 23));
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["substract"](100, 81));
 
-console.log(__WEBPACK_IMPORTED_MODULE_0__person__["b" /* isAdult */](18));
-console.log(__WEBPACK_IMPORTED_MODULE_0__person__["a" /* canDrink */](18));
+// import { isAdult, canDrink } from "./person";
+
+// console.log(isAdult(18));
+// console.log(canDrink(18));
 
 
 /***/ }),
-/* 1 */,
-/* 2 */
+/* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return isAdult; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return canDrink; });
-const isAdult = age => age >= 18;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return square; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return add; });
+/* unused harmony export default */
+console.log("utils.js is running");
 
-const canDrink = age => age >= 21;
+const square = x => x * x;
+
+const add = (a, b) => a + b;
+
+const substract = (a, b) => a - b;
 
 
+
+// export - default export - named exports
 
 
 /***/ })
