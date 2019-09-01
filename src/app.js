@@ -1,4 +1,4 @@
-import { square, add, substract } from "./utils";
+import substract, { square, add } from "./utils";
 
 console.log("app.js is running!");
 console.log(square(4));
