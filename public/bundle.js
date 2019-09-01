@@ -69,27 +69,41 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__utils__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__person__ = __webpack_require__(2);
+// import anythnigIWant, { square, add } from "./utils";
+
+// console.log("app.js is running!");
+// console.log(square(4));
+// console.log(add(100, 23));
+// console.log(anythnigIWant(100, 81));
 
 
-console.log("app.js is running!");
-console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["square"](4));
-console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["add"](100, 23));
-console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["default"](100, 81));
 
-// import { isAdult, canDrink } from "./person";
+console.log(__WEBPACK_IMPORTED_MODULE_0__person__["c" /* isAdult */](18));
+console.log(__WEBPACK_IMPORTED_MODULE_0__person__["a" /* canDrink */](18));
+console.log(__WEBPACK_IMPORTED_MODULE_0__person__["b" /* default */](64));
 
-// console.log(isAdult(18));
-// console.log(canDrink(18));
+// Setting the default export and function
+// Grab the default and call it
 
 
 /***/ }),
-/* 1 */
-/***/ (function(module, __webpack_exports__) {
+/* 1 */,
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-throw new Error("Module parse failed: /Users/laicailin/Desktop/Andrew/react-course-projects/React/src/utils.js Duplicate export 'default' (11:7)\nYou may need an appropriate loader to handle this file type.\n| export default substract;\n| \n| export default (a, b) => a - b;\n| \n| ");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return isAdult; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return canDrink; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return isSeniorCitizen; });
+const isAdult = age => age >= 18;
+
+const canDrink = age => age >= 21;
+
+const isSeniorCitizen = age => age >= 65;
+
+
+
 
 /***/ })
 /******/ ]);
