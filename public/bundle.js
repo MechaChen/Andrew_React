@@ -70,12 +70,13 @@
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__utils__);
 
 
 console.log("app.js is running!");
-console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* square */](4));
-console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* add */](100, 23));
-console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* default */](100, 81));
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["square"](4));
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["add"](100, 23));
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["default"](100, 81));
 
 // import { isAdult, canDrink } from "./person";
 
@@ -85,24 +86,10 @@ console.log(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* default */](100, 81));
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, __webpack_exports__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return square; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return add; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return substract; });
-console.log("utils.js is running");
-
-const square = x => x * x;
-
-const add = (a, b) => a + b;
-
-const substract = (a, b) => a - b;
-
-
-
-// export - default export - named exports
-
+throw new Error("Module parse failed: /Users/laicailin/Desktop/Andrew/react-course-projects/React/src/utils.js Duplicate export 'default' (11:7)\nYou may need an appropriate loader to handle this file type.\n| export default substract;\n| \n| export default (a, b) => a - b;\n| \n| ");
 
 /***/ })
 /******/ ]);
