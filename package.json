@@ -15,6 +15,9 @@
     "babel-preset-react": "6.24.1",
     "install": "^0.13.0",
     "live-server": "1.2.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "validator": "^11.1.0",
     "webpack": "3.1.0"
   }
 }
