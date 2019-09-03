@@ -30097,18 +30097,6 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// Directly export Stateless component will make componet in React Dev Tool as a "Anonymous" component
-// export default props => {
-//   return (
-//     <div>
-//       {props.optionText}
-//       <button onClick={e => props.handleDeleteOption(props.optionText)}>
-//         remove
-//       </button>
-//     </div>
-//   );
-// };
-
 var Option = function Option(props) {
   return _react2.default.createElement(
     "div",
