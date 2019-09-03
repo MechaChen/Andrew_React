@@ -19,8 +19,12 @@ module.exports = {
     ]
   },
   // make browser can find Original error place
-  devtool: "cheap-module-eval-source-map"
+  devtool: "cheap-module-eval-source-map",
+  devServer: {
+    contentBase: path.join(__dirname, "public")
+  }
 };
 
 // babel-core: 類似 babel-cli，讓 Webpack 可使用 babel
 // babel-loader: 讓 Webpack 知道如何使用 babel
+// webpack-dev-server: 類似 live-server，但在 Webpack 開發環境下更快
