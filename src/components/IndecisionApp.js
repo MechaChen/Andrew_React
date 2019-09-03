@@ -32,6 +32,9 @@ class IndecisionApp extends React.Component {
 
     this.setState(prevState => ({ options: prevState.options.concat(option) }));
   };
+  handleClearSelectedOption = () => {
+    this.setState(() => ({ selectedOption: undefined }));
+  };
   componentDidMount() {
     try {
       const json = localStorage.getItem("options");
@@ -67,7 +70,10 @@ class IndecisionApp extends React.Component {
           handleDeleteOption={this.handleDeleteOption}
         />
         <AddOption handleAddOption={this.handleAddOption} />
-        <OptionModal selectedOption={this.state.selectedOption} />
+        <OptionModal
+          selectedOption={this.state.selectedOption}
+          handleClearSelectedOption={this.handleClearSelectedOption}
+        />
       </div>
     );
   }

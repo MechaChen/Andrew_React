@@ -29896,6 +29896,10 @@ var IndecisionApp = function (_React$Component) {
       _this.setState(function (prevState) {
         return { options: prevState.options.concat(option) };
       });
+    }, _this.handleClearSelectedOption = function () {
+      _this.setState(function () {
+        return { selectedOption: undefined };
+      });
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
@@ -29945,7 +29949,10 @@ var IndecisionApp = function (_React$Component) {
           handleDeleteOption: this.handleDeleteOption
         }),
         _react2.default.createElement(_AddOption2.default, { handleAddOption: this.handleAddOption }),
-        _react2.default.createElement(_OptionModal2.default, { selectedOption: this.state.selectedOption })
+        _react2.default.createElement(_OptionModal2.default, {
+          selectedOption: this.state.selectedOption,
+          handleClearSelectedOption: this.handleClearSelectedOption
+        })
       );
     }
   }]);
@@ -30460,16 +30467,34 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var OptionModal = function OptionModal(props) {
   return _react2.default.createElement(
     _reactModal2.default,
-    { isOpen: !!props.selectedOption, contentLabel: "Selected Option" },
+    {
+      isOpen: !!props.selectedOption,
+      onRequestClose: props.handleClearSelectedOption,
+      contentLabel: "Selected Option"
+    },
     _react2.default.createElement(
       "h3",
       null,
       "Selected Option"
+    ),
+    props.selectedOption && _react2.default.createElement(
+      "p",
+      null,
+      props.selectedOption
+    ),
+    _react2.default.createElement(
+      "button",
+      { onClick: props.handleClearSelectedOption },
+      "Okay"
     )
   );
 };
 
 exports.default = OptionModal;
+
+// Create a new event handle in IndecisionApp that clears selectedOption state
+// Pass that into OptionModal
+// Call it on button click
 
 /***/ }),
 /* 30 */
