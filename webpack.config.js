@@ -17,7 +17,9 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
-  }
+  },
+  // make browser can find Original error place
+  devtool: "cheap-module-eval-source-map"
 };
 
 // babel-core: 類似 babel-cli，讓 Webpack 可使用 babel
