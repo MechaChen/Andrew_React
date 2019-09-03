@@ -520,7 +520,7 @@ var Layout = function Layout(props) {
       null,
       "header"
     ),
-    props.content,
+    props.children,
     _react2.default.createElement(
       "p",
       null,
@@ -544,7 +544,15 @@ var template = _react2.default.createElement(
   )
 );
 
-_reactDom2.default.render(_react2.default.createElement(Layout, { content: template }), document.getElementById("app"));
+_reactDom2.default.render(_react2.default.createElement(
+  Layout,
+  null,
+  _react2.default.createElement(
+    "p",
+    null,
+    "This is inline"
+  )
+), document.getElementById("app"));
 
 /***/ }),
 /* 6 */
