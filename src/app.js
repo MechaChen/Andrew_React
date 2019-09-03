@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Header from "./components/Header";
+import Action from "./components/Action";
+import Options from "./components/Options";
 import AddOption from "./components/AddOption";
-import Option from "./components/Option";
 
 class IndecisionApp extends React.Component {
   constructor(props) {
@@ -83,43 +85,6 @@ class IndecisionApp extends React.Component {
   }
 }
 
-const Header = props => {
-  return (
-    <div>
-      <h1>{props.title}</h1>
-      {props.subtitle && <p>{props.subtitle}</p>}
-    </div>
-  );
-};
-
-Header.defaultProps = {
-  title: "Indecision"
-};
-
-const Action = props => {
-  return (
-    <div>
-      <button onClick={props.handlePick} disabled={!props.hasOptions}>
-        What should I do?
-      </button>
-    </div>
-  );
-};
-
-const Options = props => {
-  return (
-    <div>
-      <button onClick={props.handleDeleteOptions}>Remove All</button>
-      {props.options.length === 0 && <p>Please add an option to get started</p>}
-      {props.options.map(option => (
-        <Option
-          key={option}
-          optionText={option}
-          handleDeleteOption={props.handleDeleteOption}
-        />
-      ))}
-    </div>
-  );
-};
+// Create the file, copy the copy, setup import/export
 
 ReactDOM.render(<IndecisionApp />, document.getElementById("app"));
