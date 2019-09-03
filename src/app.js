@@ -9,3 +9,19 @@ import IndecisionApp from "./components/IndecisionApp";
 // Create the file, copy the copy, setup import/export
 
 ReactDOM.render(<IndecisionApp />, document.getElementById("app"));
+
+class OldSyntax {
+  constructor() {
+    this.name = "Mike";
+  }
+}
+const oldSyntax = new OldSyntax();
+console.log(oldSyntax);
+
+// -----------------------
+
+class NewSyntax {
+  name = "Jen";
+}
+const newSyntax = new NewSyntax();
+console.log(newSyntax);
