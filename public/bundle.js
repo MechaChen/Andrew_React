@@ -29883,7 +29883,9 @@ var IndecisionApp = function (_React$Component) {
     }, _this.handlePick = function () {
       var randomNum = Math.floor(Math.random() * _this.state.options.length);
       var option = _this.state.options[randomNum];
-      alert(option);
+      _this.setState(function () {
+        return { selectedOption: option };
+      });
     }, _this.handleAddOption = function (option) {
       if (!option) {
         return "Enter some value.";
