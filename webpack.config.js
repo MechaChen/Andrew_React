@@ -15,6 +15,11 @@ module.exports = {
         test: /\.js$/,
         // exclude specific files
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        // use "use" can take 2 above loaders
+        use: ["style-loader", "css-loader"]
       }
     ]
   },
