@@ -25,7 +25,7 @@ class AddOption extends React.Component {
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.handleAddOption}>
           <input type="text" name="option" />
-          <button>{"add option".toUpperCase()}</button>
+          <button className="button">{"add option".toUpperCase()}</button>
         </form>
       </div>
     );
