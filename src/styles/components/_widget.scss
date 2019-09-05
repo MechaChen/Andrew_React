@@ -1,3 +1,8 @@
+.widget {
+  background: $light-blue;
+  margin-bottom: $xl-size;
+}
+
 // widget Header
 .widget-header {
   background: $blue;
@@ -7,9 +12,6 @@
   padding: $m-size;
 }
 
-// setup an element selector for widget-header
-// set margin
-// use the class
 .widget-header__title {
   margin: 0;
 }
