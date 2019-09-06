@@ -2,13 +2,20 @@
 .big-button {
   background: $purple;
   border: none;
-  border-bottom: 0.6rem solid darken($purple, 10%);
+  box-shadow: 0 0.6rem darken($purple, 10%);
   color: #fff;
   font-weight: bold;
   font-size: $l-size;
   margin-bottom: $m-size;
   padding: 2.4rem;
   width: 100%;
+  position: relative;
+  top: 0;
+  transition: top 0.5s, box-shadow 0.5s;
+  &:hover {
+    top: 0.6rem;
+    box-shadow: 0 0rem darken($purple, 10%);
+  }
 }
 
 .big-button:disabled {
@@ -19,10 +26,17 @@
 .button {
   background: $purple;
   border: none;
-  border-bottom: 0.3rem solid darken($purple, 10%);
+  box-shadow: 0 0.3rem darken($purple, 10%);
   color: #fff;
   font-weight: 500;
   padding: $s-size;
+  position: relative;
+  top: 0;
+  transition: top 0.5s, box-shadow 0.5s;
+  &:hover {
+    top: 0.3rem;
+    box-shadow: 0 0 darken($purple, 10%);
+  }
 }
 
 // bem: block element modifier
@@ -32,6 +46,10 @@
   border: none;
   color: $off-white;
   padding: 0;
+  box-shadow: none;
+  &:hover {
+    top: 0;
+  }
 }
 
 @media all and (min-width: $desktop-breakpoint) {
