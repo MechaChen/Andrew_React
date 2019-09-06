@@ -1,7 +1,10 @@
+// use m-size for small screens and xl-size for large screen
+// for header & big-button
+
 .header {
   background: $off-black;
   color: #fff;
-  margin-bottom: $xl-size;
+  margin-bottom: $m-size;
   padding: $m-size 0;
 }
 
@@ -16,4 +19,10 @@
   font-size: $m-size;
   font-weight: 500;
   margin: 0;
+}
+
+@media all and (min-width: $desktop-breakpoint) {
+  .header {
+    margin-bottom: $xl-size;
+  }
 }
